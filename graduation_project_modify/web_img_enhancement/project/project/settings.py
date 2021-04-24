@@ -77,13 +77,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'modify_img',
-        'USER': 'root',
+        'USER': 'myuser',
         'PASSWORD': '123456',
-        'HOST': '127.0.0.1',
+        'HOST': '123.57.48.53',
         'POST':'3306',
     }
 }
 
+ALLOWED_HOSTS = ['*']
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
