@@ -1,0 +1,95 @@
+{% extends 'web_img_enhancement/base.html' %}
+{% load static from staticfiles %}
+{% block linkscript%}
+    <link rel="stylesheet" type="text/css" href="{% static 'mine/css/register.css' %}" />
+    <script type="text/javascript" charset="utf-8" src="{% static 'mine/js/register.js' %}" ></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'login_res/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'login_res/css/util.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'login_res/css/main.css' %}"/>
+{% endblock linkscript%}
+
+
+{% block base %}
+
+    <div class="dowebok">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <span class="login100-form-title">
+					用户注册
+				</span>
+                <form class="form-horizontal" action="/register/" method="post" enctype="multipart/form-data">
+                    {%csrf_token%}
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="text" id="accunt" name="userAccount" placeholder="请输入用户名">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        </span>
+				    </div>
+                        <span id="accunterr" class="error">用户名长度应为6-12个字符</span>
+                        <span id="checkerr" class="error">账号已被占用，请重新输入</span>
+
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="password" id="pass" name="userPass" placeholder="请输入密码">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+				    </div>
+                    <span id="passerr" class="error">密码格式建议至少6-16个字符</span>
+
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="password" id="passwd" name="userPasswd" placeholder="请再次输入密码">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+				    </div>
+                    <span id="passwderr" class="error">两次密码输入不同</span>
+
+                    <div class="wrap-input100 validate-input">
+                        <input required="required" class="input100" type="text" name="userName" placeholder="请输入昵称">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-vcard-o" aria-hidden="true"></i>
+                        </span>
+				    </div>
+
+                    <div class="wrap-input100 validate-input">
+                        <input required="required" class="input100" type="text" name="userPhone" placeholder="请输入电话">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-mobile" aria-hidden="true"></i>
+                        </span>
+				    </div>
+
+                    <div class="wrap-input100 validate-input">
+                        <input required="required" class="input100" type="text" name="userAdderss" placeholder="请输入地址">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-institution" aria-hidden="true"></i>
+                        </span>
+				    </div>
+
+                    <div class="wrap-input100 validate-input">
+                        <div class="btn-box">
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-image" aria-hidden="true"></i>
+
+                            </span>
+                            <span id="imgselect">请选择头像</span>
+                            <img src="{% static '/main/img/cover.png' %}" alt="" class="img" id="img">
+                            <input type="file" id="file" accept="image/*" name="userImg" required>
+                            <!--这里也要用js检查是否放了图片-->
+                        </div>
+                    </div>
+                    <div class="container-login100-form-btn">
+					    <input class="login100-form-btn" id="zhuce" type="submit" value="注册"/>
+				    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock base %}

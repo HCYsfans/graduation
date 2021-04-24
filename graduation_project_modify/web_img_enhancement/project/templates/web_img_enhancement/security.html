@@ -1,0 +1,72 @@
+{% extends 'web_img_enhancement/base.html' %}
+{% load static from staticfiles %}
+{% block linkscript%}
+    <link rel="stylesheet" type="text/css" href="{% static 'mine/css/register.css' %}" />
+    <script type="text/javascript" charset="utf-8" src="{% static 'mine/js/security.js' %}" ></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'login_res/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'login_res/css/util.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'login_res/css/main.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'login_res/css/security.css' %}"/>
+{% endblock linkscript%}
+
+
+{% block base %}
+
+    <div class="dowebok">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <span class="login100-form-title">
+					修改密码
+				</span>
+
+                <form class="form-horizontal" action="/security/" method="post" enctype="multipart/form-data">
+                    {%csrf_token%}
+                    <div class="wrap-input100 validate-input">
+                        <div align="center">
+                            <span class="tip3">
+                                您好！<ac id="useraccount">{{Ac}}</ac>
+                            </span>
+                        </div>
+				    </div>
+                    <div class="kg1"></div>
+
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="password" id="oldpass" name="oldpswd" placeholder="请输入原密码:">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+				    </div>
+                    <span id="olderr" class="error">原密码不正确,请重新输入</span>
+
+                    <div class="kg1"></div>
+
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="password" id="newpass1" name="newpswd1" placeholder="请输入新密码:">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+				    </div>
+                    <span id="pass1err" class="error">密码格式建议至少6-16个字符</span>
+
+                    <div class="kg1"></div>
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="password" id="newpass2" name="newpswd2" placeholder="再次确认新密码:">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+				    </div>
+                    <span id="pass2err" class="error">两次密码输入不同</span>
+
+                    <div class="kg1"></div>
+                    <div class="container-login100-form-btn">
+					    <input class="login100-form-btn" id="xiugai" type="submit" value="修改密码"/>
+				    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock base %}

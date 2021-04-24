@@ -1,0 +1,205 @@
+{% extends 'web_img_enhancement/base.html' %}
+
+{% load static from staticfiles %}
+
+{% block linkscript %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css'%}" />
+    <script type="text/javascript" charset="utf-8" src="{% static 'home/js/home.js' %}"></script>
+{% endblock linkscript %}
+
+{% block base %}
+<div id="home">
+
+    <!--轮播-->
+    <section class="swiper-container" id="topSwiper" >
+
+        <div class="swiper-wrapper">
+             {% for item in wheelsList %}
+                <div class="swiper-slide">
+                    <!--未设置href-->
+                    <a href="../handle/{{item.trackid}}"><img src="{{item.img}}"/></a>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>    </section>
+
+    <!--导航-->
+    <section class="topMenu">
+        <nav>
+            <ul>
+                {% for item in navList1 %}
+                <li>
+                    <!--href未确定-->
+                    <a href="../handle/{{item.trackid}}">
+                        <img src="{{item.img}}" />
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </nav>
+
+        <menu class="swiper-container swiperMenu" id="swiperMenu">
+            <ul class="swiper-wrapper">
+                {% for item in navList2 %}
+                <li class="swiper-slide">
+                    <a href="../handle/{{item.trackid}}"><img src="{{item.img}}"/></a>
+                </li>
+                {% endfor %}
+            </ul>
+        </menu>
+
+    </section>
+    <!--分割-->
+    <hr class="hr1"/>
+    <p class="ex">精彩案例</p>
+    <hr class="hr1"/>
+
+    <!--展示-->
+    <hr class="hr2"/>
+    <section class="antu">
+        <p class="ex2">暗图像增强</p>
+
+        <dl>
+
+            <dd id="yuant">
+                        原图
+            </dd>
+
+            <dt class="chuliqiantu1">
+                <span>
+
+                </span>
+            </dt>
+            <dt class="chuliqiantu2">
+                <span>
+
+                </span>
+            </dt>
+
+        </dl>
+
+        <dl>
+            <dd id="jieguo">
+                结果
+            </dd>
+
+            <dt class="chulihoutu1">
+                <span>
+
+                </span>
+            </dt>
+            <dt class="chulihoutu2">
+                <span>
+
+                </span>
+            </dt>
+        </dl>
+
+    </section>
+
+    <hr class="hr2"/>
+    <section class="quwu">
+        <p class="ex2">图像去雾</p>
+
+        <dl>
+
+            <dd class="yuant">
+                        原图
+            </dd>
+
+            <dt class="chuliqiantu1">
+                <span>
+
+                </span>
+            </dt>
+            <dt class="chuliqiantu2">
+                <span>
+
+                </span>
+            </dt>
+
+        </dl>
+
+        <dl>
+            <dd class="jieguo">
+                结果
+            </dd>
+
+            <dt class="chulihoutu1">
+                <span>
+
+                </span>
+            </dt>
+            <dt class="chulihoutu2">
+                <span>
+
+                </span>
+            </dt>
+        </dl>
+
+    </section>
+
+    <hr class="hr2"/>
+    <section class="trans">
+        <p class="ex2">颜色迁移</p>
+
+        <dl>
+
+            <dd class="yuant">
+                原图
+            </dd>
+
+            <dt class="chuliqiantu1">
+                <span>
+
+                </span>
+            </dt>
+            <dt class="chuliqiantu2">
+                <span>
+
+                </span>
+            </dt>
+
+        </dl>
+
+        <dl>
+
+            <dd class="canzhao">
+                参照图
+            </dd>
+
+            <dt class="canzhaotu1">
+                <span>
+
+                </span>
+            </dt>
+            <dt class="canzhaotu2">
+                <span>
+
+                </span>
+            </dt>
+
+        </dl>
+
+        <dl>
+            <dd class="jieguo">
+                结果
+            </dd>
+
+            <dt class="chulihoutu1">
+                <span>
+
+                </span>
+            </dt>
+            <dt class="chulihoutu2">
+                <span>
+
+                </span>
+            </dt>
+        </dl>
+
+    </section>
+
+</div>
+
+{% endblock base %}

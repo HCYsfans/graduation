@@ -1,0 +1,237 @@
+{% extends 'web_img_enhancement/base.html' %}
+
+{% load static from staticfiles %}
+
+{% block linkscript %}
+    <link rel="stylesheet" type="text/css" href="{% static 'mine/css/mine.css'%}" />
+    <script type="text/javascript" charset="utf-8" src="{% static 'mine/js/mine.js' %}"></script>
+{% endblock linkscript %}
+
+{% block base %}
+<div id="mine">
+<section class="fixed">
+		<span>
+			{% if request.session.userimg != NULL %}
+				<img class="userimg" src="{{request.session.userimg}}"/>
+			{% else %}
+				<img class="userimg" src="{% static 'mine/img/defaultpic.png' %}"/>
+			{% endif %}
+        </span>
+		<p><a class="myname" href="/login/">{{username}}</a></p>
+		<p><a class="modify" href="/modify/">编辑信息</a></p>
+		<a id="regis" href="/register/">注册</a>
+
+</section>
+
+    <section class="mine" id="mine0">
+
+		<nav id="nav">
+			<ul>
+				<li>
+					<a href="/mine/1/">
+						<dl>
+							<dt><span class="glyphicon glyphicon-picture"></span></dt>
+							<dd>我的相册</dd>
+						</dl>
+					</a>
+				</li>
+				<li>
+					<a href="/mine/3/">
+						<dl>
+							<dt><span class="glyphicon glyphicon-paperclip"></span></dt>
+							<dd>个人信息</dd>
+						</dl>
+					</a>
+				</li>
+				<li>
+					<a href="/mine/2/">
+						<dl>
+							<dt><span class="glyphicon glyphicon-star"></span></dt>
+							<dd>我的收藏</dd>
+						</dl>
+					</a>
+				</li>
+				<li>
+					<a href="/mine/4/">
+						<dl>
+							<dt><span class="glyphicon glyphicon-remove"></span></dt>
+							<dd>已删除</dd>
+						</dl>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<hr class="hr1"/>
+		<p>
+			<span>我的结果</span><a href="/exhibit/1/">管理我的结果&gt;</a>
+		</p>
+		<p>
+			<span>账号安全</span><a href="/security/">账号安全&gt;</a>
+		</p>
+		<p>
+			<span>设置</span><a>进入设置&gt;</a>
+		</p>
+		<p>
+			<span>关于图像处理</span><a href="/mine/5/">介绍本软件&gt;</a>
+		</p>
+		<p>
+			<span>作者寄语</span><a href="/mine/6/">介绍本作者&gt;</a>
+		</p>
+		<hr class="hr2"/>
+		<p id="tuichu" style="font-size:0.5rem;color:#708090;text-align:center;">退出当前账号</p>
+
+	</section>
+
+	<section class="mine" id="mine1">
+
+		<div class="fh">
+			<a href="/mine/0/" class="tip3" >&larr;返回</a>
+		</div>
+		<hr class="hr1">
+
+		<div class="xc" align="center">
+			<p class="tip4">我的相册</p>
+		</div>
+
+		<ul>
+                {% for item in resultsList %}
+                <li>
+					<div class="detail">
+					 	<h2>{{item.name}}</h2>
+						{%if item.type == 1 %}
+							<p>暗图像增强结果</p>
+						{% endif %}
+						{%if item.type == 2 %}
+							<p>图像去雾结果</p>
+						{% endif %}
+						{%if item.type == 3 %}
+							<p>颜色迁移结果</p>
+						{% endif %}
+						{%if item.type == 4 %}
+							<p>对比度拉伸结果</p>
+						{% endif %}
+						{%if item.type == 5 %}
+							<p>图像加密结果</p>
+						{% endif %}
+						{%if item.type == 6 %}
+							<p>图像模糊结果</p>
+						{% endif %}
+						{%if item.type == 7 %}
+							<p>图像锐化结果</p>
+						{% endif %}
+						{%if item.type == 8 %}
+							<p>边缘识别结果</p>
+						{% endif %}
+						{%if item.type == 9 %}
+							<p>图像去噪结果</p>
+						{% endif %}
+					 	<button class="shoucang" bianhao="{{item.id}}" value="收藏此图像">收藏此图像</button>
+						{% if item.iscollect == 1 %}
+							<div align="center">
+							<i>已收藏&nbsp;&nbsp;&hearts;</i>
+							</div>
+						{% endif %}
+				  	</div>
+                    <img class="tu" src="{{item.res_path}}" />
+                </li>
+                {% endfor %}
+		</ul>
+
+	</section>
+
+	<section class="mine" id="mine2">
+
+		<div class="fh">
+			<a href="/mine/0/" class="tip3" >&larr;返回</a>
+		</div>
+		<hr class="hr1">
+
+		<div class="xc" align="center">
+			<p class="tip4">我的收藏</p>
+		</div>
+
+		<ul>
+                {% for item in resultsList %}
+                <li>
+					<div class="detail">
+					 	<h2>{{item.name}}</h2>
+						<div class="kg"></div>
+						<button class="quxiaoshoucang" bianhao="{{item.id}}" value="取消收藏">取消收藏</button>
+				  	</div>
+                    <img class="tu" src="{{item.res_path}}" />
+                </li>
+                {% endfor %}
+		</ul>
+
+	</section>
+
+	<section class="mine" id="mine3">
+
+		<div class="fh">
+			<a href="/mine/0/" class="tip3" >&larr;返回</a>
+		</div>
+		<hr class="hr1">
+
+		<div class="xc" align="center">
+			<p class="tip4">我的信息</p>
+			<div class="kg"></div>
+			<p class="tip5">我的用户ID：{{useraccount}}</p>
+			<p class="tip5">我的用户名：{{username}}</p>
+			<p class="tip5">我的手机号：{{userphone}}</p>
+			<P class="tip5">我的地址：{{useraddress}}</P>
+		</div>
+
+	</section>
+
+	<section class="mine" id="mine4">
+
+		<div class="fh">
+			<a href="/mine/0/" class="tip3" >&larr;返回</a>
+		</div>
+		<hr class="hr1">
+
+		<div class="xc" align="center">
+			<p class="tip4">已删除图像</p>
+		</div>
+
+		<ul>
+                {% for item in resultsList %}
+                <li>
+					<div class="detail">
+					 	<h2>{{item.name}}</h2>
+						<div class="kg"></div>
+						<button class="huifutuxiang" bianhao="{{item.id}}" value="恢复图像">恢复图像</button>
+				  	</div>
+                    <img class="tu" src="{{item.res_path}}" />
+                </li>
+                {% endfor %}
+		</ul>
+
+
+	</section>
+
+	<section class="mine" id="mine5">
+
+		<div class="fh">
+			<a href="/mine/0/" class="tip3" >&larr;返回</a>
+		</div>
+		<hr class="hr1">
+
+		<p>这其实就只是我的毕业设计而已</p>
+
+	</section>
+
+	<section class="mine" id="mine6">
+
+		<div class="fh">
+			<a href="/mine/0/" class="tip3" >&larr;返回</a>
+		</div>
+		<hr class="hr1">
+
+		<p>郭家岑，一个男生</p>
+
+	</section>
+
+
+</div>
+{% endblock base %}

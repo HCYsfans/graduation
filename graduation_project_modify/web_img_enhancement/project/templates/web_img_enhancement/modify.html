@@ -1,0 +1,74 @@
+{% extends 'web_img_enhancement/base.html' %}
+{% load static from staticfiles %}
+{% block linkscript%}
+    <link rel="stylesheet" type="text/css" href="{% static 'mine/css/register.css' %}" />
+    <script type="text/javascript" charset="utf-8" src="{% static 'mine/js/modify.js' %}" ></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'login_res/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'login_res/css/util.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'login_res/css/modify.css' %}"/>
+{% endblock linkscript%}
+
+
+{% block base %}
+
+    <div class="dowebok">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <span class="login100-form-title">
+					修改信息
+				</span>
+                <form class="form-horizontal" action="/modify/" method="post" enctype="multipart/form-data">
+                    {%csrf_token%}
+                    <div class="wrap-input100 validate-input">
+                        <div align="center">
+                            <span class="tip3">
+                                您好！{{Ac}}
+                            </span>
+                        </div>
+				    </div>
+
+
+                    <div class="wrap-input100 validate-input">
+                        <span class="symbol-input100">
+                            <p class="tip2"> 您的昵称：</p>
+                        </span>
+                        <input required="required" class="input100" type="text" name="userName" value="{{Na}}">
+                        <span class="focus-input100"></span>
+				    </div>
+
+                    <div class="wrap-input100 validate-input">
+                        <span class="symbol-input100">
+                            <p class="tip2"> 您的电话：</p>
+                        </span>
+                        <input required="required" class="input100" type="text" name="userPhone" value="{{Ph}}">
+                        <span class="focus-input100"></span>
+				    </div>
+
+                    <div class="wrap-input100 validate-input">
+                        <span class="symbol-input100">
+                            <p class="tip2"> 您的地址：</p>
+                        </span>
+                        <input required="required" class="input100" type="text" name="userAdderss" value="{{Ad}}">
+                        <span class="focus-input100"></span>
+				    </div>
+
+                    <div class="wrap-input100 validate-input">
+                        <div class="btn-box">
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100" style="margin-right:1rem;">
+                                <p class="tip2"> 您的头像：</p>
+                            </span>
+                            <img src="{{Img}}" alt="" class="modify_img" id="img">
+                            <input type="file" id="file" accept="image/*" name="userImg">
+                            <!--这里也要用js检查是否放了图片-->
+                        </div>
+                    </div>
+                    <div class="container-login100-form-btn">
+					    <input class="login100-form-btn" id="xiugai" type="submit" value="修改"/>
+				    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock base %}

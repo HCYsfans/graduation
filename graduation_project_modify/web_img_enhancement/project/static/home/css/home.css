@@ -1,0 +1,315 @@
+#home {
+  padding: 1.5rem 0;
+  font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 3rem;
+  position: fixed;
+  background:#fffffb;}
+
+
+#topSwiper {
+  height: 5rem;
+  width: 10rem;
+  overflow: hidden; }
+#topSwiper div a {
+  display: inline-block;
+  height: 5rem;
+  width: 10rem; }
+#topSwiper img {
+  width: 100%;
+  height: 100%; }
+
+.tip{
+font-size:0.4rem;
+font-family:微软雅黑;
+}
+
+.topMenu {
+  padding-bottom: 0.26rem; }
+.topMenu nav {
+    margin: 0.05rem 0 0.05rem;
+  background: white; }
+.topMenu nav ul {
+  display: flex; }
+.topMenu nav li {
+  width: 2.5rem;
+  text-align: center;
+  font-size: 0.35rem; }
+.topMenu nav li img {
+  width: 2.5rem; }
+
+
+
+
+#swiperMenu {
+  width:100%;}
+/*
+#swiperMenu li{
+  width:3.333333rem
+}*/
+#swiperMenu li img {
+  width: 100%; }
+
+
+
+
+
+.CVS {
+  background: white; }
+.CVS h2 img {
+  width: 100%; }
+
+
+
+.CVS fieldset {
+  border: none;
+  padding: 0; }
+.CVS fieldset > a {
+  display: inline-block;
+  width: 49%; }
+.CVS fieldset img {
+  width: 100%; }
+
+
+
+.CVS ul {
+  display: flex; }
+.CVS ul li {
+  width: 2.5rem;
+  text-align: center;
+  font-size: 0.35rem; }
+.CVS ul li img {
+  width: 2.5rem; }
+
+
+
+.CVS ol {
+  display: flex;
+  flex-wrap: wrap; }
+.CVS ol li {
+  list-style: none;
+  width: 5rem; }
+.CVS > ol a {
+  display: block; }
+.CVS ol a img {
+  width: 100%; }
+
+
+
+.mainInfo {
+  background-color: white; }
+.mainInfo > section {
+  margin: 0.2rem auto 0;
+  padding: 0.2rem 0;
+  width: 9.2rem; }
+.mainInfo > section h3 {
+  text-align: center;
+  height: 1.2rem;
+  position: relative; }
+.mainInfo > section h3 a {
+  color: grey;
+  font-size: 0.3rem;
+  line-height: 0rem;
+  position: absolute;
+  right: 0.1rem;
+  display: block; }
+.mainInfo > section h3 > span {
+  background-color: yellow;
+  width: 0.6rem;
+  height: 0.1rem;
+  position: absolute;
+  bottom: 0.25rem;
+  left: 4.3rem; }
+
+
+.mainInfo > section > div > a > img {
+  width: 100%; }
+
+
+
+.mainInfo > section > ul {
+  display: flex;
+  justify-content: space-around; }
+.mainInfo > section > ul > li {
+  width: 2.6rem;
+  position: relative；}
+
+.hr1{
+margin:0.1rem;
+border:2;
+height: 0.05rem;
+background-image: linear-gradient(to right, rgba(122,197,205,0), rgba(122,197,205,0.75), rgba(122,197,205,0));
+}
+
+.hr2{
+margin:0.3rem;
+border:3;
+height: 0.05rem;
+background-image: linear-gradient(to right, rgba(190,190,190,0), rgba(190,190,190,0.75), rgba(190,190,190,0));
+}
+
+
+.ex{
+margin: 0rem auto 0;
+padding: 0rem 0;
+font-size:0.5rem;
+text-align:center;
+font-family:宋体;
+}
+
+.ex2{
+margin: 0rem auto 0;
+padding: 0rem 0;
+font-size:0.4rem;
+text-align:center;
+font-family:宋体;
+}
+
+.antu dl{
+    display:inline-block;
+    width:49%!important;
+    text-align:center;
+    overflow:hidden!important;
+}
+
+.antu dl dt{
+    height:4rem;
+    margin:0.1rem 0rem 0rem 0.1rem;
+    width:4.7rem;
+    position:relative;
+}
+
+.antu dl dt span{
+    display:inline-block;
+    width:4.7rem;
+    height:4rem;
+}
+
+.antu dl dd{
+    height: 0.8rem;
+    font-size:0.4rem;
+    margin:0.2rem;
+    font-family:宋体;
+    text-align:center;
+}
+
+.antu .chuliqiantu1 span{
+    background: url(/static/home/img/hai.jpg) no-repeat;
+    background-size:4.7rem 4.7rem;
+}
+.antu .chuliqiantu2 span{
+    background: url(/static/home/img/horse.png) no-repeat;
+    background-size:4.7rem 4.7rem;
+}
+
+.antu .chulihoutu1 span{
+    background: url(/static/home/img/hai_JED.jpg) no-repeat;
+    background-size:4.7rem 4.7rem;
+}
+.antu .chulihoutu2 span{
+    background: url(/static/home/img/horse_JED.png) no-repeat;
+    background-size:4.7rem 4.7rem;
+}
+
+.quwu dl{
+    display:inline-block;
+    width:49%!important;
+    text-align:center;
+    overflow:hidden!important;
+}
+
+.quwu dl dt{
+    height:4rem;
+    margin:0.1rem 0rem 0rem 0.1rem;
+    width:4.7rem;
+    position:relative;
+}
+
+.quwu dl dt span{
+    display:inline-block;
+    width:4.7rem;
+    height:4rem;
+}
+
+.quwu dl dd{
+    height: 0.8rem;
+    font-size:0.4rem;
+    margin:0.2rem;
+    font-family:宋体;
+    text-align:center;
+}
+
+.quwu .chuliqiantu1 span{
+    background: url(/static/home/img/mountain.png) no-repeat;
+    background-size:4.7rem 4.7rem;
+}
+.quwu .chuliqiantu2 span{
+    background: url(/static/home/img/block.png) no-repeat;
+    background-size:4.7rem 4.7rem;
+}
+
+.quwu .chulihoutu1 span{
+    background: url(/static/home/img/defmou.jpg) no-repeat;
+    background-size:4.7rem 4.7rem;
+}
+.quwu .chulihoutu2 span{
+    background: url(/static/home/img/defblock.jpg) no-repeat;
+    background-size:4.7rem 4.7rem;
+}
+
+.trans dl{
+    display:inline-block;
+    width:32%!important;
+    text-align:center;
+    overflow:hidden!important;
+}
+
+.trans dl dt{
+    height:3.6rem;
+    margin:0.1rem 0rem 0rem 0.05rem;
+    width:3.3rem;
+    position:relative;
+}
+
+.trans dl dt span{
+    display:inline-block;
+    width:3.3rem;
+    height:3.5rem;
+}
+
+.trans dl dd{
+    height: 0.8rem;
+    font-size:0.4rem;
+    margin:0.2rem;
+    font-family:宋体;
+    text-align:center;
+}
+
+.trans .chuliqiantu1 span{
+    background: url(/static/home/img/bisa.jpg) no-repeat;
+    background-size:3.3rem 3.8rem;
+}
+.trans .chuliqiantu2 span{
+    background: url(/static/home/img/tree.jpg) no-repeat;
+    background-size:3.3rem 3.8rem;
+}
+
+.trans .canzhaotu1 span{
+    background: url(/static/home/img/beach.jpg) no-repeat;
+    background-size:3.3rem 3.8rem;
+}
+.trans .canzhaotu2 span{
+    background: url(/static/home/img/pink.jpg) no-repeat;
+    background-size:3.3rem 3.8rem;
+}
+
+.trans .chulihoutu1 span{
+    background: url(/static/home/img/ye_bisa.jpg) no-repeat;
+    background-size:3.3rem 3.8rem;
+}
+.trans .chulihoutu2 span{
+    background: url(/static/home/img/pinktree.jpg) no-repeat;
+    background-size:3.3rem 3.8rem;
+}

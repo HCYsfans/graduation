@@ -1,0 +1,10 @@
+.kg1{
+   margin:0.5rem;
+}
+
+.error{
+    margin-left:2rem;
+    font-size:0.3rem;
+    color: #e62e2e;
+    display: none;
+}

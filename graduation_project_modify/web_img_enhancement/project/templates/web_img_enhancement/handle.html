@@ -1,0 +1,117 @@
+{% extends 'web_img_enhancement/base.html' %}
+
+{% load static from staticfiles %}
+
+{% block linkscript %}
+<link rel="stylesheet" type="text/css" href="{% static 'handle/css/handle.css'%}" />
+<script type="text/javascript" charset="utf-8" src="{% static 'handle/js/handle.js' %}"></script>
+{% endblock linkscript %}
+
+{% block base %}
+
+<div id="handle">
+
+    <aside>
+        <menu>
+            <ul>
+                {% for item in leftSlider %}
+
+                <li>
+                    <span id="a{{item.trackid}}" class="blueSlide"></span>
+                    <a href="/handle/{{item.trackid}}">{{item.name}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </menu>
+    </aside>
+
+    <section>
+        <nav>
+            {{Type.name}}
+        </nav>
+
+        <form  action="/sctp/{{Type.trackid}}/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p class="quming">给本次操作取个名字吧:</p>
+            <div class="input_control">
+                <!--添加js判断是否输入-->
+                <input type="text" name="pic_name" id="pic_name" placeholder="此处输入操作名" required>
+            </div>
+            <span id="tippp" class="error">该名称已重复,请重新输入</span>
+            <p class="xuanze">选择对应图片:</p>
+
+                <!--颜色迁移中-->
+            <div id="trans_p1">
+                <p class="trans_p">请选择将要变化的图:</p>
+            </div>
+            <div class="btn-box">
+                <img src="{% static '/main/img/cover.png' %}" alt="" class="img" id="img">
+                <input type="file" id="file" accept="image/*" name="picture" required>
+                <!--这里也要用js检查是否放了图片-->
+            </div>
+
+                <!--颜色迁移的p2-->
+            <div id="trans_p2">
+                <p class="trans_p">请选择要参照的图:</p>
+            </div>
+
+                <!--颜色迁移中的第二个文件-->
+            <div id="trans_f1" class="btn-box">
+                <img src="{% static '/main/img/cover.png' %}" alt="" class="img" id="img2">
+                <input type="file" id="file2" accept="image/*" name="picture2">
+                <!--这里也要用js检查是否放了图片-->
+            </div>
+
+            <!--设js让他显示/不显示-->
+            <div id="antutip">
+                <p class="tip1">注意！请上传暗图像</p>
+                <p class="tip1">若图像亮度过高则效果将会很差</p>
+            </div>
+         <!--
+            <div id="quwutip">
+                <p class="tip1">注意！请上含雾图像</p>
+                <p class="tip1">图片中的雾会得到很好的处理</p>
+            </div>
+        -->
+            <div class="sub">
+                <input  id="sub" type="submit" value="上传处理">
+            </div>
+        </form>
+        {% if request.session.res_path != NULL %}
+        <div id="result_display">
+            <div class="jieguo">
+                <img class="result" src="{{ request.session.res_path }}"/>
+            </div>
+            <!--给一些键 确定 取消-->
+            <div class="check">
+                <span class="baocun">
+                    <button id="bc" value="保存">保存</button>
+                </span>
+                <span class="shanchu">
+                    <button id="sc" value="删除">删除</button>
+                </span>
+            </div>
+        </div>
+        {% endif %}
+        <div id="success1">
+            <p class="tip2">保存成功</p>
+        </div>
+
+        <div id="success2">
+            <p class="tip2">删除成功</p>
+        </div>
+
+        {% if request.session.status != NULL %}
+            <div id="wdl">
+                <p id="wdlw" class="tip3">您还未登录,请先登录</p>
+            </div>
+            <div class="dl" align="center">
+                <button><a class="tip5" href="/login/" >点击登录</a></button>
+            </div>
+        {% endif %}
+
+    </section>
+
+</div>
+
+{% endblock base %}

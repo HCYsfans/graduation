@@ -1,0 +1,93 @@
+{% extends 'web_img_enhancement/base.html' %}
+
+{% load static from staticfiles %}
+
+{% block linkscript %}
+    <link rel="stylesheet" type="text/css" href="{% static 'exhibit/css/exhibit.css'%}" />
+    <script type="text/javascript" charset="utf-8" src="{% static 'exhibit/js/exhibit.js' %}"></script>
+{% endblock linkscript %}
+
+{% block base %}
+
+<div id="exhibit">
+
+    <section>
+        <nav>
+            <ul>
+				<li>
+                    <span id="showtypebtn">
+                        结果类型
+                        <span class="glyphicon glyphicon-chevron-down" style="font-weight: 100"></span>
+                    </span>
+                </li>
+                <li>
+                    <span id="selectdelete">
+                        批量删除
+                        <span class="glyphicon glyphicon-chevron-down" style="font-weight: 100"></span>
+                    </span>
+                </li>
+            </ul>
+        </nav>
+
+
+        <menu>
+
+            <span class="ty">{{Type.name}}</span>
+            <hr class="hr1"/>
+            <section id="else1">
+                <ul>
+                    {% for item in resultsList %}
+                    <li>
+                        <span>{{item.name}}</span>
+                        <img class="tu" src="{{item.rel_path}}" />
+                        {% if Type.name != '颜色迁移'%}
+                            <img class="tu" src="{{item.res_path}}" />
+                        {% else %}
+                            <img class="tu" src="{{item.ref_rel_path}}" />
+                        {% endif%}
+                        {% if Type.name == '颜色迁移'%}
+                        <div>
+                            <div class="kg"></div>
+                            <img class="tu" src="{{item.res_path}}" />
+                        </div>
+                        {% endif%}
+                        <span class="manipulate">
+                            <img bianhao="{{item.id}}" class="xiugai" src="{% static 'exhibit/img/修改.jpg' %}"/>
+                            <img bianhao="{{item.id}}" class="shanchu" src="{% static 'exhibit/img/删除.png' %}"/>
+                        </span>
+
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            {% if request.session.status != NULL %}
+                <span class="denglu">
+                    <div id="wdl">
+                        <p id="wdlw">您还未登录,请先登录</p>
+                    </div>
+                    <div align="center">
+                        <button><a class="tip5" href="/login/" >点击登录</a></button>
+                    </div>
+                </span>
+            {% endif %}
+
+            <div id="typediv">
+                <div>
+                    <a href="/exhibit/1/" class="sorta"><span>暗图增强</span></a>
+                    <a href="/exhibit/2/" class="sorta"><span>图像去雾</span></a>
+                    <a href="/exhibit/3/" class="sorta"><span>颜色迁移</span></a>
+                    <a href="/exhibit/4/" class="sorta"><span>对比拉伸</span></a>
+                    <a href="/exhibit/5/" class="sorta"><span>图像加密</span></a>
+                    <a href="/exhibit/6/" class="sorta"><span>图像模糊</span></a>
+                    <a href="/exhibit/7/" class="sorta"><span>图像锐化</span></a>
+                    <a href="/exhibit/8/" class="sorta"><span>边缘识别</span></a>
+                    <a href="/exhibit/9/" class="sorta"><span>图像去燥</span></a>
+                </div>
+            </div>
+        </menu>
+
+    </section>
+
+</div>
+
+{% endblock base %}

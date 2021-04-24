@@ -1,0 +1,22 @@
+
+
+.btn-box {
+    position: relative;
+    }
+
+.file-ipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0; //将input设为透明
+    }
+
+.btn {
+    width: 100px;
+    height: 30px;
+    background-color: skyblue;
+    color: white;
+    margin-right: 80px;
+    border: none;
+    border-radius: 10px;
+    }

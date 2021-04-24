@@ -1,0 +1,237 @@
+#mine {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: +10;
+  background: whitesmoke;
+  overflow: hidden;
+  padding-top: 4rem;
+  padding-bottom: 1.5rem; }
+
+
+.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 4rem;
+  background: #afdfe4;
+  padding-top: 0.5rem;
+}
+
+.fixed > span {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  float: left;
+  margin: 0 0.3rem 0;
+  font-size: 1.5rem;
+  color: black;
+  background: white;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 1.8rem;
+ }
+
+.userimg{
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+.fixed p {
+  margin-top:0.8rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.5rem;
+  color: white;
+ }
+
+.fixed p .myname{
+  color:white;
+}
+
+.fixed p .modify
+{
+  color: black;
+}
+
+#regis {
+  position: absolute;
+  right: 0.3rem;
+  top: 1.3rem;
+  color: #228fbd;
+  font-size: 0.7rem;
+}
+/*mine这里的overflow是auto.... 上面是写死的,下面的可以来回滑*/
+.mine {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 1.5rem;
+  font-size: 0.4rem;
+  background:white;
+}
+.mine p {
+  line-height: 1.5rem;
+  padding: 0 0.3rem;
+  background: white;
+  border-bottom: 0.04rem solid lightyellow; }
+.mine p a {
+  color: grey;
+  float: right; }
+
+.hr1{
+margin:0.1rem;
+border:2;
+height: 0.04rem;
+background-image: linear-gradient(to right, rgba(102,205,170,0), rgba(102,205,170,0.75), rgba(102,205,170,0));
+}
+
+.hr2{
+margin:0.1rem;
+border:2;
+height: 0.05rem;
+background-image: linear-gradient(to right, rgba(70,130,180,0), rgba(70,130,180,0.75), rgba(70,130,180,0));
+}
+
+.qq{
+    size:0.9rem;
+    color:#778899;
+}
+
+.mine #nav, .mine menu {
+  padding: 0.5rem 0 0.3rem;
+  background: white; }
+.mine #nav ul, .mine menu ul {
+  display: flex;
+  justify-content: space-around; }
+.mine #nav ul li dl, .mine menu ul li dl {
+  text-align: center; }
+.mine #nav ul li dl dt, .mine menu ul li dl dt {
+  width: 100%;
+  line-height: 1rem; }
+.mine #nav ul li dl dt span, .mine menu ul li dl dt span {
+  font-size: 0.5rem; }
+.mine menu ul {
+  flex-wrap: wrap; }
+.mine menu ul li {
+  width: 25%; }
+.mine menu ul li:last-child {
+  width: 100%; }
+.mine menu ul li:last-child dl {
+  width: 25%; }
+.mine p:last-child > a {
+  line-height: 1.5rem;
+  text-align: center;
+  width: 100%;
+  display: block;
+  float: none; }
+
+.tip3{
+font-size:0.5rem;
+font-family:微软雅黑;
+}
+
+.fh{
+margin:0.2rem;
+}
+
+.hr1{
+margin:0.1rem;
+border:2;
+height: 0.05rem;
+background-image: linear-gradient(to right, rgba(122,197,205,0), rgba(122,197,205,0.75), rgba(122,197,205,0));
+}
+
+.xc p{
+line-height: 1rem;
+}
+
+.tip4{
+line-height: 1rem;
+font-size:0.55rem;
+font-family:微软雅黑;
+}
+
+ul li{
+list-style:none;
+position:relative;
+float:left;
+overflow:hidden;
+}
+
+ul li .tu {
+  margin-top:0.25rem;
+  margin-left:0.27rem;
+  width: 4.5rem;
+  height:5rem;
+}
+
+ul li .detail{
+    margin-top:0.25rem;
+    margin-left:0.27rem;
+    width:4.5rem;
+    height:5rem;
+    background:rgba(0,0,0,0.7);
+    position:absolute;
+    display:none;
+    -webkit-transition:all 0.3s ease;<!--适应ie，谷歌，苹果浏览器内核-->
+    -o-transition:all 0.3s ease;<!--适应Opera浏览器内核-->
+    -moz-transition:all 0.3s ease;<!--火狐浏览器-->
+    -ms-transition:all 0.3s ease;<!--微软-->
+}
+
+ul li:hover .detail{
+    display:block;
+}
+
+ul li .detail h2{
+    font-size:0.45rem;
+    color:#fff;
+    text-align:center;
+    padding-top:1rem;
+}
+
+ul li .detail p{
+    line-height: 1rem;
+    background:none;
+    border-bottom:none;
+    font-size:0.4rem;
+    text-align:center;
+    margin:0.2rem;
+    color:#fff;
+}
+
+ul li .detail i{
+    font-size:0.4rem;
+    color:#ffe600;
+    text-align:center;
+    margin-top:1rem;
+    text-align:center;
+    line-height: 1.2rem;
+}
+
+ul li .detail button{
+
+    background-color: #99CCDD;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size:0.5rem;
+    display:block;
+    color:#fff;
+    width:3.5rem;
+    height:1rem;
+    text-align:center;
+    margin:0 auto;
+}
+
+.kg{
+    margin-top:1rem;
+}
+
+.tip5{
+text-align:left;
+line-height: 1.5rem;
+font-size:0.5rem;
+font-family:微软雅黑;
+}
